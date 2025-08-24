@@ -24,7 +24,7 @@ router = APIRouter(
 SECRET_KEY = os.environ["JWT_SECRET_HEX"]
 ALGORITHM = os.environ["ALGORITHM"]
 
-
+# Bcrypt
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauthe_bearer = OAuth2PasswordBearer(tokenUrl="/auth/token")
 
@@ -71,7 +71,7 @@ async def get_current_user(token: Annotated[str, Depends(oauthe_bearer)]):
         user_role: str = payload.get("role")
         if username is None or user_id is None:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Could not validate user.")
-        return {"username": username, "id": user_id, "role": user_role}
+        return {"username": username, "id": user_id, "user_role": user_role}
     except JWTError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Could not validate user.")
         
