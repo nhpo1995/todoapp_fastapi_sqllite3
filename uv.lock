@@ -2,12 +2,6 @@ version = 1
 revision = 2
 requires-python = ">=3.13"
 
-[manifest]
-members = [
-    "todoapp",
-    "todoapp-fastapi-sqllite3",
-]
-
 [[package]]
 name = "alembic"
 version = "1.16.4"
@@ -726,17 +720,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/04/57/d062573f391d06271
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f7/1f/b876b1f83aef204198a42dc101613fefccb32258e5428b5f9259677864b4/starlette-0.47.2-py3-none-any.whl", hash = "sha256:c5847e96134e5c5371ee9fac6fdf1a67336d5815e09eb2a01fdb57a351ef915b", size = 72984, upload-time = "2025-07-20T17:31:56.738Z" },
 ]
-
-[[package]]
-name = "todoapp"
-version = "0.1.0"
-source = { virtual = "TodoApp" }
-dependencies = [
-    { name = "python-dotenv" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "python-dotenv", specifier = ">=1.1.1" }]
 
 [[package]]
 name = "todoapp-fastapi-sqllite3"
